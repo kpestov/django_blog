@@ -6,7 +6,7 @@
 
 {% block content %}
 
-   <form action="{% url 'post_create_url' %}" method="post"></form>
+   <form action="{% url 'post_create_url' %}" method="post">
 
       {% csrf_token %}
 
@@ -28,5 +28,7 @@
          {% endfor %}
 
          <button class="btn btn-primary" type="submit">Create post</button>
+
+   </form>
 
 {% endblock %}
