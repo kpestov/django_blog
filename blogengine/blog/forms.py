@@ -65,3 +65,5 @@ class PostForm(forms.ModelForm):
 
         if new_slug == 'create':
             raise ValidationError('Slug can not be created!')
+
+        return new_slug
