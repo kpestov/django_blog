@@ -6,11 +6,12 @@
 
 {% block content %}
 
-    <form action="{% url 'tag_delete_url' slug=tag.slug %}" method="post">
+    <!--<form action="{% url 'tag_delete_url' slug=tag.slug %}" method="post">-->
+    <form action="{{ tag.get_delete_url }}" method="post">
 
         {% csrf_token %}
 
-        <h3>Are you sure you want to delete <b> {{tag.title | title}} </b> tag? </h3>
+        <h3>Are you sure you want to delete <b> "{{tag.title | title}}" </b> tag? </h3>
 
         <a href="{% url 'tag_detail_url' slug=tag.slug %}" class="btn btn-primary">Cancel</a>
 
